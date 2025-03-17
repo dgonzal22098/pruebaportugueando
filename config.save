@@ -1,0 +1,11 @@
+# Cuenta 1
+Host github.com-cuenta1
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_cuenta1
+
+# Cuenta 2
+Host https://github.com/dgonzal22098
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_github.com/dgonzal22098
