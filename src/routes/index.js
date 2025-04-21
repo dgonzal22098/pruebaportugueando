@@ -1,0 +1,16 @@
+export { default as Login} from './Login';
+export { default as NewPassword} from './NewPassword';
+export { default as Pruebas} from './Pruebas';
+export { default as Recover} from './Recover';
+export { default as Collection} from './Collection';
+export { default as Dashboard} from './Dashboard';
+export { default as Profile} from './Profile';
+export { default as Reportes} from './Reportes';
+export { default as RegistrarProfesor} from './RegistrarProfesor';
+export { default as Grupos} from './Grupos/GruposAdmin';
+export { default as CrearGrupos} from './CrearGrupos';
+export { default as Cursos} from './Cursos';
+export { default as GruposHistoricos} from './GruposHistoricos'
+export { default as GruposDocente} from './Grupos/GruposProfe/GruposCard'
+export { default as GruposDocentesNivel} from './Grupos/GruposProfe/GroupsAssigned'
+export { default as MaterialApoyo} from './MaterialApoyo'

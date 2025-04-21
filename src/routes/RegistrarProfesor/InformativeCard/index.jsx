@@ -1,0 +1,122 @@
+import styled from "styled-components"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowDroprightCircle as Arrow} from "react-icons/io";
+import { FaToggleOn as ToggleOn, FaToggleOff as ToggleOff } from "react-icons/fa";
+import AlertActivation from "../Alert";
+
+const InformativeCard = ({usuario}) => {
+
+    const [isActivated, setIsActivated] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
+
+    const navigate = useNavigate();
+
+  const irACursos = () => {
+    navigate("/pruebas/cursos");
+  };
+    
+    
+    return (
+    <Container>
+
+        <Primero>
+          <DataHeader>
+            <p>Nombre: {usuario.nombre}</p>
+            <p>Correo: {usuario.email}</p>
+            <p>Cédula: {usuario.cedula}</p>
+            <p>Fecha de inscripción: {usuario.fecha_nac}</p>
+          </DataHeader>
+        </Primero>
+
+        <BotonContainer>
+          <Boton className="EstadoDiv ">
+            <p>Estado: {usuario.estado ? "Activo" : "Inactivo"} </p>
+
+            <div style={{display:"flex",alignItems:"center"}}>
+              {isActivated ? <ToggleOn 
+                className="iconito" 
+                isActivated={isActivated} 
+                onClick={() => {setIsActivated(!isActivated); setShowAlert(true)}}
+                /> : <ToggleOff 
+                      className="iconito off" 
+                      isActivated={isActivated} 
+                      onClick={() => setIsActivated(!isActivated) }/>}
+            </div>
+
+          </Boton>
+
+          <Boton 
+            className="EstadoDiv cursos" 
+            onClick={irACursos}>
+              <p>Cursos inscritos</p>
+              <div style={{display:"flex",alignItems:"center"}}>
+                <Arrow className="iconito"/>
+              </div>
+          </Boton>
+
+        </BotonContainer>
+
+        {showAlert && <AlertActivation 
+          setShowAlert={setShowAlert} 
+          isActivated={isActivated} 
+          setIsActivated={setIsActivated}/>}
+
+    </Container>)
+}
+
+export default InformativeCard
+
+const Container = styled.div`
+    padding: 2.5rem;
+    width: 85%;
+    height: fit-content;
+    display: flex;
+    border-radius: 10px;
+    border: 0.5px grey solid;
+    gap: 15px;
+    background-color: white;
+`
+const BotonContainer = styled.div`
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+`
+const Primero = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+`
+const Boton = styled.div`
+  width: 30%;
+  padding: 1rem;
+  border: 0.5px #a6a6a6 solid;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+  &.EstadoDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .iconito{
+    font-size: 1.7rem;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &.cursos{
+    &:hover{
+      background-color: #e4e4e4;
+      cursor: pointer;
+    }
+  }
+`
+const DataHeader = styled.div`
+  padding: 1rem;
+  border: 0.5px #a6a6a6 solid;
+  border-radius: 5px;
+  width: 100%;
+`
