@@ -71,10 +71,14 @@ export default Grupos
 const Container = styled.div`
     padding: 2.5rem;
     width: 75%;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    height: 100vh;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `
 const Titulo = styled.h1`
   font-size: 3rem;

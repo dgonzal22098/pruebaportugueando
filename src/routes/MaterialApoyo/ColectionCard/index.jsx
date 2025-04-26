@@ -36,7 +36,7 @@ export default ColectionCard
 
 const Container = styled.div`
     width: 100%;
-    height: 240px;
+    height: fit-content;
     display: flex;
     background-color: white;
     border-radius: 15px;

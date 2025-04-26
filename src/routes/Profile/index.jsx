@@ -37,6 +37,8 @@ const InformativeCard = styled.div`
     padding: 2rem;
     border: 0.5px #999999 solid;
     border-radius: 5px;
+    background-color: white;
+    width: 85%;
 `
 const DataModified = styled.p`
     margin-bottom: 1rem;

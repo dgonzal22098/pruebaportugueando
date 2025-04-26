@@ -27,6 +27,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     border: 1px #d0d0d0 solid;
+    background-color: white;
 `
 const InfoCont = styled.div`
     display: flex;

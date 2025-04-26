@@ -1,17 +1,19 @@
+
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
-
-const ListadoEstudiantes = ({ setShowEstudiantes }) => {
+const ListaEjemplo = ({ setListaEstudiantesEjemplo }) => {
   return (
-    <Overlay onClick={() => setShowEstudiantes(false)}>
+    <Overlay onClick={() => setListaEstudiantesEjemplo(false)}>
+      
       <Modal onClick={(e) => e.stopPropagation()}>
         
-        <CloseButton onClick={() => setShowEstudiantes(false)}>
+        <CloseButton onClick={() => setListaEstudiantesEjemplo(false)}>
           <IoClose size={24} />
         </CloseButton>
-        
+
         <h2 style={{margin:"2rem"}}>Listado de Estudiantes</h2>
+        
         <EstudiantesList>
           {estudiantes.map((est, i) => (
             <Estudiante key={i}>
@@ -22,15 +24,19 @@ const ListadoEstudiantes = ({ setShowEstudiantes }) => {
         </EstudiantesList>
 
         <ButtonGroup>
+
           <Button>Descargar Excel</Button>
-          <Button className="cerrar" onClick={() => setShowEstudiantes(false)}>Cerrar</Button>
+          <Button className="cerrar" onClick={() => setListaEstudiantesEjemplo(false)}>Cerrar</Button>
+        
         </ButtonGroup>
+
       </Modal>
+
     </Overlay>
   );
 };
 
-export default ListadoEstudiantes;
+export default ListaEjemplo;
 
 const estudiantes = [
     { nombre: "Alejandra Barros", correo: "abarros25896@universidadean.edu.co" },
@@ -50,7 +56,6 @@ const estudiantes = [
     { nombre: "Darío Gómez", correo: "dgomez61254@universidadean.edu.co" },
     { nombre: "Alejandro Fernández", correo: "afernan21985@universidadean.edu.co" }
   ];
-
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -64,10 +69,9 @@ const Overlay = styled.div`
   justify-content: center;
   z-index: 9999;
 `;
-
 const Modal = styled.div`
-  background: white;
   position: relative;
+  background: white;
   padding: 2rem;
   border-radius: 1rem;
   width: 600px;
@@ -80,7 +84,6 @@ const Modal = styled.div`
       display: none;
   }
 `;
-
 const EstudiantesList = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,19 +95,15 @@ const EstudiantesList = styled.div`
       display: none;
   }
 `;
-
 const Estudiante = styled.div`
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
 `;
-
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-left: 2rem;
 `;
-
 const Button = styled.button`
   flex: 1;
   height: 45px;

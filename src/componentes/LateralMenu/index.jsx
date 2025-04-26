@@ -85,7 +85,7 @@ const getLinksByRole = (data) => {
 
 const estudianteLinks = [
   {label: "Perfil", icon: <UserIC />, to: "profile",},
-  {label: "Colecciones", icon: <CollectionIC />, to: "collection",},
+  {label: "Material de apoyo", icon: <CollectionIC />, to: "material_apoyo",},
   {label: "Dashboard", icon: <DashboardIC />, to: "dashboard",},
   {label: "Mis reportes", icon: <ReportesIC />, to: "reportes",},
 ];
@@ -99,7 +99,6 @@ const adminLinks = [
   {label: "Perfil", icon: <UserIC />, to: "profile",},
   {label: "Registro Docente", icon: <TeacherIC />, to: "registro_profesor",},
   {label: "Cursos y grupos", icon: <CursosIC />, to: "cursos",},
-  {label: "Crear grupo", icon: <GroupCreationIC />, to: "group_creation",},
 ];
 const LogoutOption = styled.div`
   margin: 1rem 0;
@@ -150,9 +149,10 @@ const Container = styled.div`
   width: ${({ isOpen }) => (isOpen ? "250px" : "95px")};
   transition: all 0.3s ease;
   background-color: black;
-  height: auto;
+  height: 100vh;
   position: sticky;
   padding: 2rem 2rem ;
+  
 
   .SidebarButton {
     font-size: 1.3rem;

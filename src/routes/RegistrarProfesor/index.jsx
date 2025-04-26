@@ -39,9 +39,13 @@ export default RegistrarProfesor
 const Container = styled.div`
     padding: 2.5rem;
     width: 85%;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    height: 100vh;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `
 

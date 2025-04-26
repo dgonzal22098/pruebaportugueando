@@ -80,12 +80,20 @@ const Modal = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  &::-webkit-scrollbar {
+      display: none;
+  }
 `;
 const EstudiantesList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-left: 2rem;
+  max-height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+      display: none;
+  }
 `;
 const Estudiante = styled.div`
   border-bottom: 1px solid #ddd;
