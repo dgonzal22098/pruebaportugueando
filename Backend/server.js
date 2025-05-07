@@ -64,12 +64,6 @@ app.get('/api/usuarios', async (req, res) => {
 
 })
 
-  // app.get('/api/usuarios/:email', (req, res) => {
-  //   const email = req.params.email;
-  //   console.log('Recibido:', email); // 👈 esto debe aparecer en consola si accedes desde navegador
-  // });
-
-
 
 //LEVANTAR EL SERVIDOR
 
