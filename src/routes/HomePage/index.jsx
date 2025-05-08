@@ -3,24 +3,13 @@ import HomeBackground from '../../assets/logos/homeBackground.png'
 
 const HomePage = () => {
 
-    const elementos = [];
-    for (let i = 0; i < 40; i++) {
-        elementos.push(
-        <p key={i}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur temporibus autem et atque animi commodi inventore dolor exercitationem minus tempora placeat aperiam cum molestias, odit accusamus ipsa voluptatum fugiat. Inventore.
-        </p>
-        );
-    }
+
   
     return (
         <>
             <ContentContainer>
         
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur temporibus autem et atque animi commodi inventore dolor exercitationem minus tempora placeat aperiam cum molestias, odit accusamus ipsa voluptatum fugiat. Inventore.</p>
-    
-                {elementos.map((object, index) => (
-                    <p>{object}</p>
-                ))}
+                
     
             </ContentContainer>
 
@@ -49,7 +38,7 @@ const ContentContainer = styled.div`
 
 
 const ImageContainer = styled.div`
-    width: 100%;
+    width: 80%;
     height: 100%;
     position: absolute;
     bottom: 0;
@@ -60,6 +49,7 @@ const ImageContainer = styled.div`
     align-items: flex-end;
     pointer-events: none;
     z-index: 0; 
+    background-color: red;
 
     .homeBackground{
     width: 70%;
