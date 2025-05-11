@@ -14,13 +14,13 @@ import LogoPortugueando from '../../assets/logos/logoPortugueandoBlanco.png'
 import LogoutComp from "../LogoutComp";
 
 
-
 const LateralMenu = ({isOpen, showSideBar,data}) => {
   const logo = isOpen && LogoPortugueando;
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
 
   const linksArray = getLinksByRole(data.rol);
+
 
   return (
     <Container isOpen={isOpen}>
@@ -57,7 +57,11 @@ const LateralMenu = ({isOpen, showSideBar,data}) => {
             );
           })}
 
-        <LogoutOption onClick={() => setShowModal(true)}>
+        <LogoutOption 
+        onClick={
+          () => 
+            setShowModal(true)
+          }>
           <div className="CloseSesion">
             <LogoutIC className="LogoutIcon" />
             {isOpen && <span>Cerrar Sesión</span>}
@@ -85,7 +89,7 @@ const getLinksByRole = (data) => {
 };
 
 const estudianteLinks = [
-  {label: "Home", icon: <HomeIcon />, to: "profile",},
+  {label: "Home", icon: <HomeIcon />, to: "home",},
   {label: "Perfil", icon: <UserIC />, to: "profile",},
   {label: "Material de apoyo", icon: <CollectionIC />, to: "material_apoyo",},
   {label: "Dashboard", icon: <DashboardIC />, to: "dashboard",},
