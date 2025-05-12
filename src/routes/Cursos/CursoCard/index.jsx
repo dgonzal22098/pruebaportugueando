@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+// Plantilla de cursos que han sido creados por el administrador
+// Rol: Administrador
+// Logica: Abre el modal de crear un grupo y desde alla se envia la informacion del nuevo grupo a la base de datos.
+
 const CursoCard = ({value, toGroups, setShowCrearGrupoModal}) => {
 
 

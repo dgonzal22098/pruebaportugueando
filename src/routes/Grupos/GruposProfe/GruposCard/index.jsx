@@ -2,6 +2,11 @@ import styled from "styled-components"
 import GrupoCard from "../CardNivel";
 import { useNavigate,Outlet } from "react-router-dom"
 
+// Main de Grupos docente
+// Rol: Profesor
+// Funcion: Este modulo que es el main de la opcion "grupos" permite ver los niveles en los que el docente esta participando y un conteo de los grupos que ese nivel contiene, por ejemplo los grupos activos o inactivos.
+// Logica: se debe obtener el nombre del nivel o el curso donde estaría haciendo el conteo de los grupos asignados.
+
 const GruposCard = () => {
   const navigate = useNavigate();
 

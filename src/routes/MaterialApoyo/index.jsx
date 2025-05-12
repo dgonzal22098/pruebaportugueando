@@ -1,12 +1,18 @@
 import styled from "styled-components"
 import { TextField } from "@mui/material"
 import { CiSearch } from "react-icons/ci";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { useOutletContext } from "react-router-dom";
 import SamplePictureLogo from '../../assets/logos/imagenIconSample.webp'
+import SamplePicture from '../../assets/logos/sampleImg.png'
 import ContentColection from './ContentColection';
 import ColectionCard from "./ColectionCard";
+
+// Modulo de las colecciones disponibles
+// Rol: Profesor, Estudiante
+// Logica: El modulo trae las colecciones creadas por el docente para cierto grupo, el cual esta disponible tambien para los estudiantes, la otra funcionalidad necesaria en este modulao es la de enviar la informacion de la coleccion nueva a la base de datos.
+// Pendiente: Agregar el input de una imagen que el profesor quiera poner en la coleccion o si prefiere con la imagen por defecto.
 
 const MaterialApoyo = () => {
     const {usuario} = useOutletContext();
@@ -32,7 +38,8 @@ const MaterialApoyo = () => {
             {Titles.map((coleccion, index) => 
                 <ColectionCard 
                 key={index} 
-                titulo={coleccion.titulo} 
+                titulo={coleccion.titulo}
+                picture={SamplePicture}
                 etiquetas={coleccion.contenidos.flatMap(item => item.etiquetas)}
                 onAcceder={() => {
                     setShowColection(false);

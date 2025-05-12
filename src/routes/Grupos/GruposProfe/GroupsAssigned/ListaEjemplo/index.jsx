@@ -2,6 +2,11 @@
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
+// Modal de la lista de estudiantes registrados dentro del grupo
+// Rol: Profesor
+// Funcion: Este componente muestra los estudiantes inscritos en el curso al que el docente fue asignado.
+// Logica: En este modulo se debe obtener la lista de estudiantes de la base de datos y se debe mostrar en este modulo. En este modulo se debe hacer la logica donde se pueda descargar los estudiantes en formato excel.
+
 const ListaEjemplo = ({ setListaEstudiantesEjemplo }) => {
   return (
     <Overlay onClick={() => setListaEstudiantesEjemplo(false)}>

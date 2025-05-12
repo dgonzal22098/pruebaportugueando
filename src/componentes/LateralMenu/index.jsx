@@ -12,12 +12,14 @@ import { FaPeopleGroup as GroupCreationIC} from "react-icons/fa6";
 import { PiFoldersFill as CursosIC} from "react-icons/pi";
 import LogoPortugueando from '../../assets/logos/logoPortugueandoBlanco.png'
 import LogoutComp from "../LogoutComp";
+import Tooltip from '@mui/material/Tooltip';
 
 
 const LateralMenu = ({isOpen, showSideBar,data}) => {
   const logo = isOpen && LogoPortugueando;
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
+
 
   const linksArray = getLinksByRole(data.rol);
 
@@ -42,20 +44,26 @@ const LateralMenu = ({isOpen, showSideBar,data}) => {
             (location.pathname.includes("/pruebas/grupos_docente") ||
             location.pathname.includes("/pruebas/groups_assigned_docente")));
 
-             return (
-              <div className="LinkContainer" key={label}>
-                <NavLink
-                  to={to}
-                  className={({ isActive }) =>
-                    `Link ${isActive || isActiveManually ? "active" : ""}`
-                  }
-                >
-                  <div className="LinkIcon">{icon}</div>
-                  {isOpen && <span>{label}</span>}
-                </NavLink>
-              </div>
-            );
-          })}
+          return (
+
+               <Tooltip title={label} arrow placement="right">
+
+                   <div className="LinkContainer" key={label}>
+
+                       <NavLink
+                           to={to}
+                           className={({ isActive }) =>
+                               `Link ${isActive || isActiveManually ? "active" : ""}`
+                           }
+                       >
+                           <div className="LinkIcon">{icon}</div>
+                           {isOpen && <span>{label}</span>}
+                       </NavLink>
+                   </div>
+               </Tooltip>
+          );
+
+        })}
 
         <LogoutOption 
         onClick={
@@ -160,7 +168,50 @@ const Container = styled.div`
   height: 100vh;
   position: sticky;
   padding: 2rem 2rem ;
-  
+
+  nav {
+    .LinkContainer {
+      margin: 1rem 0;
+
+      .Link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        transition: background-color 0.2s;
+
+        &:hover {
+          color: black;
+          background-color: grey;
+        }
+
+        &.active {
+          color: #3BAC52;
+          border-radius: 8px;
+
+          &:hover {
+            background-color: grey;
+            color: black;
+          }
+        }
+
+        .LinkIcon {
+          font-size: 1.2rem;
+          margin-right: ${({ isOpen }) => (isOpen ? "10px" : "0")};
+        }
+
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+
 
   .SidebarButton {
     font-size: 1.3rem;
@@ -179,46 +230,7 @@ const Container = styled.div`
     transition: transform 0.3s;
     cursor: pointer;
   }
-
-  .LinkContainer {
-    margin: 1rem 0;
-
-    .Link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-      padding: 0.5rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      transition: background-color 0.2s;
-
-      &:hover {
-        color: black;
-        background-color: grey;
-      }
-
-      &.active {
-        color: #3BAC52;
-        border-radius: 8px;
-        
-        &:hover{
-          background-color: grey;
-          color: black;
-        }
-      }
-
-      .LinkIcon {
-        font-size: 1.2rem;
-        margin-right: ${({ isOpen }) => (isOpen ? "10px" : "0")};
-      }
-
-      span {
-        white-space: nowrap;
-      }
-    }
-  }
+  
 
 `;
 

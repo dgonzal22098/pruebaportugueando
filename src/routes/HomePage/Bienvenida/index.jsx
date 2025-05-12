@@ -2,26 +2,10 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const messages = [
-    "Primeros pasos, haz click en cada botón para saber más!",
-    "Explora, aprende y participa en la comunidad de eanistas!"
-];
+// Componente de bienvenida
+// Rol: Todos
+// Logica: trae el nombre del usuario y hace un efecto de scroll infinito con suavizado.
 
-const ScrollingContainer = styled.div`
-  margin-top: 1rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-`;
-
-const ScrollingText = styled(motion.p)`
-  font-size: 1.2rem;
-  color: #333;
-  text-align: center;
-  white-space: nowrap;
-`;
 
 const Bienvenida = ({ usuario }) => {
     const [index, setIndex] = useState(0);
@@ -55,3 +39,25 @@ const Bienvenida = ({ usuario }) => {
 };
 
 export default Bienvenida;
+
+
+const messages = [
+    "Primeros pasos, haz click en cada botón para saber más!",
+    "Explora, aprende y participa en la comunidad de eanistas!"
+];
+
+const ScrollingContainer = styled.div`
+  margin-top: 1rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
+
+const ScrollingText = styled(motion.p)`
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+`;

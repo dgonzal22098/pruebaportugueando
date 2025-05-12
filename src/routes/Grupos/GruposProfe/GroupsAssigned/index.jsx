@@ -5,8 +5,14 @@ import { useNavigate } from "react-router-dom"
 import { MdFileUpload } from "react-icons/md";
 import { IoIosReturnLeft } from "react-icons/io";
 import UploadFile from "./ModalUpload";
-import ShowRegistrationForm from './ListStudent'
+import ShowRegistrationForm from './StudentRegistrationForm'
 import ListaEjemplo from "./ListaEjemplo";
+
+// Modulo dentro del grupo seleccionado
+// Rol: Profesor
+// Funcion: Este modulo muestra la informacion de los grupos asignados a cierto curso, permite subir el archivo excel de nuevos estudiantes y crear estudiantes manualmente uno por uno.
+// Logica: Solamente funciona para mostrar objetos, no tiene ninguna logica en este modulo.
+// Pendiente: revisar para que cuando se suba el archivo de nuevos estudiantes y se active el boton, pueda mostrar los estudiantes actualizados, tambien considerar la funcionalidad de que el docente pueda modificar cierto estudiante en especifico en el modulo de la lista directamente.
 
 const GruposDocentesNivel = () => {
   const location = useLocation();

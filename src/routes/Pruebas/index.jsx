@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react'
 import {LateralMenu, Footer} from '../../componentes'
 import styled from 'styled-components';
 
+// Este seria el modulo principal donde se navega y se define el usuario.
+// Rol: Todos
+// Logica: Se incrusta el footer, el menu lateral y todas las paginas a traves del menu lateral, desde aca se navega basicamente.
+// Pendiente: Hace falta renombrar el componente desde aca y en todas las rutas para que quede acorde al proyecto.
+// Considerar: Tambien faltaria un icono de perfil de forma absoluta que quede flotando en alguna esquina.
+
 const Pruebas = () => {
   const [isOpen, setIsOpen]  = useState(false);
   const [usuario, setUsuario] = useState(null);

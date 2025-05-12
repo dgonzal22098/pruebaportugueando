@@ -3,16 +3,9 @@ import backgroundAdmin from "../../../assets/pictures/eanHeaderAdmin.png";
 import backgroundStudent from "../../../assets/pictures/eanHeaderEstudiante.png";
 import backgroundTeacher from "../../../assets/pictures/eanHeaderProfesor.png";
 
-const getBackgroundRole = (role) => {
-    switch (role) {
-        case "Administrador":
-            return backgroundAdmin;
-        case "Estudiante":
-            return backgroundStudent;
-        case "Profesor":
-            return backgroundTeacher;
-    }
-}
+// Componente de Cabecera
+// Rol: Todos
+// Logica: Componente que muestra una imagen y texto dependiendo del usuario, no acciones pendientes.
 
 const Header = ({role}) => {
 
@@ -34,6 +27,17 @@ const Header = ({role}) => {
 }
 
 export default Header;
+
+const getBackgroundRole = (role) => {
+    switch (role) {
+        case "Administrador":
+            return backgroundAdmin;
+        case "Estudiante":
+            return backgroundStudent;
+        case "Profesor":
+            return backgroundTeacher;
+    }
+}
 
 const Container = styled.div`
     width: 100%;

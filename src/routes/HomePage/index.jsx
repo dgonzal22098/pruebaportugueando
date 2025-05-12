@@ -4,6 +4,11 @@ import InformativeCards from "./InformativeCards";
 import Header from "./Header";
 import Bienvenida from "./Bienvenida";
 
+// Main de Home page
+// Rol: Todos
+// Logica: Muestra ciertas tarjetas dependiendo del rol y se personalizan los links para una guia rapida al inicar su aplicación. No hay pendientes en este modulo.
+
+
 const HomePage = () => {
 
     const {usuario} = useOutletContext();

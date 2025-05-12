@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 
-// faltaria realizar la logica de crear un nuevo grupo en este componente y el pop up de cuando se haya creado de forma exitosa
+// Modal de crear un nuevo grupo en un curso
+// Rol: Administrador
+// Logica: Desde aca se debe enviar la informacion del nuevo grupo a la base de datos para que se actualice y se muestre de forma exitosa. Se deben traer los datos de los docentes registrados para que se pueda seleccionar en el nuevo grupo y si no hay un docente registrado redirige al admin a la pagina de registro de docente.
+// Pendiente: Faltaria realizar la logica de crear un nuevo grupo en este componente y el pop up de cuando se haya creado de forma exitosa. Revisar la logica de cuando no hay docentes registrados para que lo redirija a la pagina de registro.
 
 const CrearGrupoModal = ({ setShowCrearGrupoModal }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);

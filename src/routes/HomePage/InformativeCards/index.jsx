@@ -3,7 +3,8 @@ import { styled as muiStyled } from '@mui/material/styles';
 import {useNavigate} from "react-router-dom";
 import Tooltip from '@mui/material/Tooltip';
 
-
+// Plantilla de tarjetas informativas
+// Logica: Tarjetas de guia rapida en la que el user puede iniciar sus primeros pasos en la aplicación, no es necesaria logica en este componente.
 
 const InformativeCards = ({frontText, backText, link}) => {
     const navigate = useNavigate();

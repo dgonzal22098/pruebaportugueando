@@ -3,10 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { FaHistory } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import { useState } from "react";
-import ListadoEstudiantes from "../Estudiantes";
+import ListadoEstudiantes from "../ListadoEstudiantes";
 import Inhabilitar from "../Inhabilitar";
 
-// falta la logica de que despues de agregar un grupo se muestre automaticamente dentro de la seccion de cursos y grupos en su respectivo nivel, asi de como mostrar en los historicos, aunque tendriamos que determinar si alguna fecha es la que categoriza a los grupos historicos, o todos incluyendo los actuales
+
+// Modulo interior dentro de la opcion "Ver grupos" en la ruta de /cursos que solo pertenece al administrador.
+// Rol: Administrador
+// Logica: Este modulo muestra los grupos creados en cierto nivel, con la informacion del docente responsable, la cantidad de estudiantes que el docente ha registrado, la fecha de creacion del grupo, y el horario del grupo. Tiene el modal de mostrar los estudiantes registrados, dentro de modal la opcion de descargar la lista de excel y la opcion de inhabilitar el grupo especifico.
+// Se deben traer los datos de los grupos de la base de datos, aca se validan los datos del grupo, se traen y se muestran en el GroupContainer. Si se inhabilita, se debe enviar el nuevo estado a la base de datos.
+// Bug: corregir la ruta de crear grupo porque ya no existe, mas bien se debe mostrar un modal de creacion de grupo.
+// Pendiente: Falta la logica de que despues de agregar un grupo se muestre automaticamente dentro de la seccion de cursos y grupos en su respectivo nivel, asi de como mostrar en los historicos, aunque tendriamos que determinar si alguna fecha es la que categoriza a los grupos historicos o todos incluyendo los actuales. Revisar si podemos permitir editar el grupo existente y guardar los cambios que se hagan sobre ese mismo grupo, cambios permitidos como horario, docente o estado.
 
 const Grupos = () => {
   const navigate = useNavigate();

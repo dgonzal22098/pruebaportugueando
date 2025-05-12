@@ -2,8 +2,10 @@ import { useState } from "react";
 import styled from "styled-components"
 import NuevoItem from "./AddTitle";
 
-// valor agregado, que al ingresar a cada titulo se pueda saber mas acerca del titulo o del link como tal con un boton de ver mas usando el parametro ({colectionName, onVerMas }) del componente
-
+// Modulo de coleccion seleccionada
+// Rol: Estudiante, Profesor
+// Logica: Muestra los items creados dentro de una coleccion, para el profesor estara habilitado la opcion de crear un nuevo item y editarlo, para estudiante solamente podra revisar y acceder al contenido. Este modulo debera enviar la informacion del nuevo item creado a la base de datos, solo cuando este habilitado el docente.
+// Valor agregado: que al ingresar a cada titulo se pueda saber mas acerca del titulo o del link como tal con un boton de ver mas usando el parametro ({colectionName, onVerMas }) del componente
 
 const ContentColection = ({selectedColection, setShowColection, setShowColectionContent, setSelectedColection, usuario}) => {
 

@@ -1,12 +1,14 @@
 import {styled} from "styled-components";
 import { Link } from "react-router-dom";
-import {Card, Formulario, Inputs, Button} from '../../componentes'
+import {Card, Formulario, Button} from '../../componentes'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 import TextField from '@mui/material/TextField';
 
-// quedaria pendiente asegurarse de que el error que tenga la validacion se muestre en el texthelper 
+// Main de Login
+// Rol: Todos
+// Logica: Toma los datos del usuario y los envia al back para su respectiva validacion, envia errores cuando no se procesa de forma correcta y redirige al home page cuando la validacion es correcta, tambien envia a la pagina de recuperar contraseña cuando no se recuerda.
+// Pendiente: Sincronizar codigo con el de daniel para que el haga la validacion del login.
 
 const Login = () => {
     const navigate = useNavigate();

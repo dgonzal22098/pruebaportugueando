@@ -2,6 +2,11 @@
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
+// Modal de listado de estudiantes históricos
+// Rol: Administrador
+// Logica: Trae la información de los estudiantes antiguos en grupos pasados y lso muestra tambien permite descargar la lista en formato Excel.
+
+
 const ListadoHistoricEstudiantes = ({ setShowHistoricStudents }) => {
   return (
     <Overlay onClick={() => setShowHistoricStudents(false)}>

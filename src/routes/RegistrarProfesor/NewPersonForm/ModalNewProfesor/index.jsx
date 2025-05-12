@@ -2,7 +2,9 @@
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 
-// aca va la logica de enviar la informacion del estudiante nuevo que se ha agregado de forma manual a la base de datos
+// Modal de confirmacion de nuevo docente
+// Rol: Administrador
+// Logica: enviar la informacion del profesor nuevo que se ha agregado de forma manual a la base de datos.
 
 const ModalNewProfesor = ({setShowProfesorModal, profesorInfo, setMostrarFormulario}) => {
     

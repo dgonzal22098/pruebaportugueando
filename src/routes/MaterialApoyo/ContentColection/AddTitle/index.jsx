@@ -3,6 +3,11 @@ import { IoClose } from "react-icons/io5";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
+// Modulo de agregar un nuevo titulo o item a cierta coleccion
+// Rol: Profesor
+// Logica: En este modulo se debe enviar la informacion de la nueva coleccion a la base de datos.
+// Pendiente: Ajustar la logica para que permita asignar el item de la coleccion a la retroalimentacion de un estudiante en particular asi como editar la coleccion (cambiar url, tipo de item y nombre)
+
 
 const NuevoItem = ({ setShowAddItem }) => {
 
@@ -36,7 +41,7 @@ const NuevoItem = ({ setShowAddItem }) => {
             <IoClose size={24} />
             </CloseButton>
             
-            <h2 style={{margin:"2rem",textAlign:"center"}}>Nueva colección</h2>
+            <h2 style={{margin:"2rem",textAlign:"center"}}>Agregar nuevo item</h2>
     
             <TextField 
             label="Título de la colección" 

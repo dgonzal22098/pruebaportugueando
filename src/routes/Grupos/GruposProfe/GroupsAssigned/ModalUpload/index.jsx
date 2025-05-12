@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 
+// Modal de subir archivo excel (lista de nuevos estudiantes)
+// Rol: Profesor
+// Funcion: Este modal recibe el archivo excel con los datos de los nuevos estudiantes en una lista y lo envia a la base de datos para registrar a los nuevos estudiantes
+// Logica: Recibir el archivo de excel, leer los datos y enviarlos a la base de datos, generar un pop up cuando el archivo se haya subido de forma correcta.
 
 const UploadFile = ({setShowUploadModal, setStudentUploaded}) => {
     const [showSuccess, setShowSuccess] = useState(false);
