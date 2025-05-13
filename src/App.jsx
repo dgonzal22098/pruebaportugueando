@@ -1,15 +1,26 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import {NewPassword, Recover, Pruebas, Login, Dashboard, Profile, Reportes, Grupos, Cursos, GruposHistoricos, GruposDocente, GruposDocentesNivel, MaterialApoyo, RegistrarProfesor, HomePage} from './routes'
+import ProtectedRoute from "./routes/ProtectedRoute";
+
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
+          {/* Rutas publicas */}
           <Route path="/" element={<Login />} />
           <Route path="/recover" element={<Recover />} />
           <Route path="/newpassword" element={<NewPassword />} />
-          <Route path="/pruebas" element={<Pruebas />}>
+
+          {/* Rutas privadas */}
+
+          <Route path="/pruebas"
+                 element={
+                <ProtectedRoute>
+                    <Pruebas />
+                </ProtectedRoute>}
+          >
             <Route path="home" element={<HomePage />} />
             <Route path="profile" element={<Profile />}/>
             <Route path="dashboard" element={<Dashboard />}/>

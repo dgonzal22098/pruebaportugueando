@@ -38,7 +38,7 @@ const ModalNewProfesor = ({setShowProfesorModal, profesorInfo, setMostrarFormula
                         setShowProfesorModal(false);
                         setMostrarFormulario(false);
                     }}>
-                        Crear estudiante
+                        Confirmar registro
                     </Confirm>
                     <Cancel onClick={() => setShowProfesorModal(false)}>Cancelar</Cancel>
 

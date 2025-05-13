@@ -8,11 +8,13 @@ import SamplePictureLogo from '../../assets/logos/imagenIconSample.webp'
 import SamplePicture from '../../assets/logos/sampleImg.png'
 import ContentColection from './ContentColection';
 import ColectionCard from "./ColectionCard";
+import NuevaColeccion from "./NuevaColeccion/index.jsx";
 
 // Modulo de las colecciones disponibles
 // Rol: Profesor, Estudiante
 // Logica: El modulo trae las colecciones creadas por el docente para cierto grupo, el cual esta disponible tambien para los estudiantes, la otra funcionalidad necesaria en este modulao es la de enviar la informacion de la coleccion nueva a la base de datos.
 // Pendiente: Agregar el input de una imagen que el profesor quiera poner en la coleccion o si prefiere con la imagen por defecto.
+// Pendiente: Implementar la logica de buscar dentro de los titulos ya sea con palabras claves o con el nombre de la coleccion.
 
 const MaterialApoyo = () => {
     const {usuario} = useOutletContext();
@@ -49,20 +51,7 @@ const MaterialApoyo = () => {
                 }}
             />)}
 
-            {usuario.rol === 'Profesor' && 
-            
-            (<ContainerNew >
-                <Imagen src={SamplePictureLogo}/>
-                <div style={{width:"55%"}}>
-                <h2 style={{marginBottom:"2.5rem"}}>Agregar nueva colección</h2>
-
-                <Button>
-                    Agregar
-                    <IoMdAdd className="addIcon"/>
-                </Button>
-            </div>
-            </ContainerNew>
-            )}
+            {usuario.rol === 'Profesor' && <NuevaColeccion />}
 
 
         </ColectionContainer>}

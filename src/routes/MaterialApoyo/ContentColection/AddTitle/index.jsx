@@ -44,7 +44,7 @@ const NuevoItem = ({ setShowAddItem }) => {
             <h2 style={{margin:"2rem",textAlign:"center"}}>Agregar nuevo item</h2>
     
             <TextField 
-            label="Título de la colección" 
+            label="Título de la item"
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}/>
             
