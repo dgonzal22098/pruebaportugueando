@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { IoIosArrowDroprightCircle as Arrow} from "react-icons/io";
 import { FaToggleOn as ToggleOn, FaToggleOff as ToggleOff } from "react-icons/fa";
 import AlertActivation from "../Alert";
+import ModalCursosInscritos from "./ModalCursosInscritos";
 
 // Componente de informacion de un docente
 // Rol: Administrador
@@ -14,12 +14,7 @@ const InformativeCard = ({usuario}) => {
 
     const [isActivated, setIsActivated] = useState(true);
     const [showAlert, setShowAlert] = useState(false);
-
-    const navigate = useNavigate();
-
-  const irACursos = () => {
-    navigate("/pruebas/cursos");
-  };
+    const [showCursosInscritos, setShowCursosInscritos] = useState(false);
     
     
     return (
@@ -53,7 +48,7 @@ const InformativeCard = ({usuario}) => {
 
           <Boton 
             className="EstadoDiv cursos" 
-            onClick={irACursos}>
+            onClick={() => setShowCursosInscritos(true)}>
               <p>Cursos inscritos</p>
               <div style={{display:"flex",alignItems:"center"}}>
                 <Arrow className="iconito"/>
@@ -66,6 +61,10 @@ const InformativeCard = ({usuario}) => {
           setShowAlert={setShowAlert} 
           isActivated={isActivated} 
           setIsActivated={setIsActivated}/>}
+
+        {showCursosInscritos && <ModalCursosInscritos
+            setShowCursosInscritos={setShowCursosInscritos}
+            nombre={usuario.name} />}
 
     </Container>)
 }

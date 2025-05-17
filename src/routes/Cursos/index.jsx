@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import CursoCard from "./CursoCard"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useState} from "react";
 import CrearGrupoModal from "./CrearGrupoModal";
 
 // Main de Cursos
@@ -13,6 +13,8 @@ const Cursos = () => {
   const navigate = useNavigate();
   const [showCrearGrupoModal, setShowCrearGrupoModal] = useState(false);
 
+
+
   const iraGrupos = () => {
     navigate("/pruebas/grupos");
   }
@@ -22,10 +24,11 @@ const Cursos = () => {
 
     <Titulo>Cursos y grupos</Titulo>
 
-    <CardContainer>
+    <CardContainer >
       {titulos.map(
         (titulo, index) => (
-          <CursoCard 
+          <CursoCard
+
           key={index} 
           value={titulo} 
           toGroups={iraGrupos} 

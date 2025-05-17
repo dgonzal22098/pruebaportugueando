@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router-dom"
 import InformativeCards from "./InformativeCards";
 import Header from "./Header";
 import Bienvenida from "./Bienvenida";
+import {device} from "../../Breakpoints/breakpoints"
 
 // Main de Home page
 // Rol: Todos
@@ -133,8 +134,12 @@ const ContentContainer = styled.div`
     flex-direction: column;
     gap: 1rem;
     align-items:center;
+    
+    @media ${device.tablet} {
+        margin: 0;
+    }
     .headerContainer{
-        height: 600px;
+        height: 100%;
     }
     .flipContainer{
         width: 100%;
@@ -143,11 +148,16 @@ const ContentContainer = styled.div`
         gap: 1rem;
         align-content: center;
         justify-content: center;
+        
+        
         .left{
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            @media ${device.mobile} {
+                grid-template-columns: 1fr;
+            }
         }
         .left p{
             width: 100%;
@@ -160,6 +170,19 @@ const ContentContainer = styled.div`
             justify-content: center;
             gap: 2rem;
             margin: 0 3rem;
+            
+            @media ${device.tablet} {
+                text-align: center;
+            }
+            
+            
+        }
+        
+        @media ${device.tablet} {
+            flex-direction: column-reverse;
+            width: 80%;
+            gap: 2rem;
+            
         }
     }
 

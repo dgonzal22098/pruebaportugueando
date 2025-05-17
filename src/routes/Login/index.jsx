@@ -44,39 +44,32 @@ const Login = () => {
         },
     ]
 
-    
 
-    const handleLogin = async (e) => {
+
+    const handleLogin = (e) => {
         e.preventDefault();
 
         const usuario = usuarios.find((u) => u.email === email);
 
         if (!usuario) {
             setError("Correo inválido o no existente");
-            setInputError({ email: true, contrasena: false });
+            setInputError({ email: true, password: false });
             return;
-        } else{
-            setError("");
-            setInputError({ email: false, contrasena: false });
-            localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
-            navigate("/pruebas/home");
         }
-
 
         if (usuario.password !== password) {
             setError("Contraseña incorrecta");
-            setInputError({ email: false, contrasena: true });
+            setInputError({ email: false, password: true });
             return;
-        } else {
-            setError("");
-            setInputError({ email: false, contrasena: false });
-            localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
-            navigate("/pruebas/home");
-            
         }
 
+        // Login exitoso
+        setError("");
+        setInputError({ email: false, password: false });
+        localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+        navigate("/pruebas/home");
+    };
 
-    }
 
     return (
         <Background>
