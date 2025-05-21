@@ -109,8 +109,8 @@ const Modal = styled.div`
     justify-content: center;
     gap: 10px;
     @media ${device.tablet} {
-        width: 70%;
         height: 80dvh;
+        margin: 0 1rem;
     }
     &:hover{
         cursor: default;

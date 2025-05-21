@@ -33,6 +33,7 @@ const Dashboard = () => {
     const [showModalConfirmation, setShowModalConfirmation] = useState(false);
     const theme = useTheme();
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobile = useMediaQuery(device.mobile);
 
 
     const handleDelete = (indexToRemove) => {
@@ -137,8 +138,7 @@ const Dashboard = () => {
                         <FormControl
                             fullWidth
                             sx={{
-                                m: 1,
-                                minWidth: 120 ,
+                                minWidth: 100 ,
                                 maxWidth: "80%",
                                 bgcolor: "white"}}
                         >
@@ -204,10 +204,13 @@ const Dashboard = () => {
                        <TableContainer
                            component={Paper}
                            sx={{
-                               padding: isTablet ? 0 : "1rem",
+                               padding: isMobile ? 0 : "1rem",
+                               margin: isMobile ? 0 : "1rem",
                            }}
                        >
-                           <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
+                           <Table sx={{
+                               minWidth: isMobile ? 100 : 200,
+                           }} size="small" aria-label="a dense table">
                                <TableHead>
                                    <TableRow>
                                        <TableCell sx={{fontWeight:"bold", fontSize:"1rem"}}>Caracter</TableCell>
@@ -308,6 +311,7 @@ const selectsConfig = [
     { label: "Redacción", name: "redaccion", options: tiposRedaccion },
     { label: "Corte", name: "corte", options: cortesNivel }
 ];
+
 const Container = styled.div`
     padding: 2.5rem;
     gap: 1rem;
@@ -317,6 +321,10 @@ const Container = styled.div`
     justify-content: flex-start;
     height: 100vh;
     overflow: auto;
+    
+    @media ${device.mobile} {
+        padding: 0;
+    }
     
     .basicData{
         margin: 1rem;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {Card, Formulario, Button} from '../../componentes'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import {device} from "../../Breakpoints/breakpoints.js"
 import TextField from '@mui/material/TextField';
 
 // Main de Login
@@ -67,7 +68,7 @@ const Login = () => {
         setError("");
         setInputError({ email: false, password: false });
         localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
-        navigate("/pruebas/home");
+        navigate("/main/home");
     };
 
 
@@ -185,8 +186,9 @@ const LinkDecorated = styled(Link)`
     text-decoration: none;
     color: #3bac52;
     font-size: 0.9rem;
+    
     &:hover {
-    color: #0c47a1;
-    text-decoration: underline;
+      color: #0c47a1;
+      text-decoration: underline;
     }
 `

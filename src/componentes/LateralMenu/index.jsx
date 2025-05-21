@@ -39,11 +39,11 @@ const LateralMenu = ({isOpen, showSideBar,data}) => {
         {
           const isActiveManually =
             (label === "Cursos y grupos" &&
-            (location.pathname.includes("/pruebas/grupos") ||
-            location.pathname.includes("/pruebas/cursos")))||
+            (location.pathname.includes("/main/grupos") ||
+            location.pathname.includes("/main/cursos")))||
             (label === "Grupos y estudiantes" &&
-            (location.pathname.includes("/pruebas/grupos_docente") ||
-            location.pathname.includes("/pruebas/groups_assigned_docente")));
+            (location.pathname.includes("/main/grupos_docente") ||
+            location.pathname.includes("/main/groups_assigned_docente")));
 
           return (
 
@@ -113,7 +113,7 @@ const profesorLinks = [
   {label: "Home", icon: <HomeIcon />, to: "home",},
   {label: "Perfil", icon: <UserIC />, to: "profile",},
   {label: "Reportes", icon: <ReportesIC />, to: "reportes",},
-  {label: "Grupos y estudiantes", icon: <GroupCreationIC />, to: "grupos_docente",},
+  {label: "Cursos y grupos", icon: <GroupCreationIC />, to: "cursos",},
   {label: "Material de apoyo", icon: <CollectionIC />, to: "material_apoyo",},
 ];
 const adminLinks = [

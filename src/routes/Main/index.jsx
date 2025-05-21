@@ -10,7 +10,7 @@ import {device} from "../../Breakpoints/breakpoints.js"
 // Pendiente: Hace falta renombrar el componente desde aca y en todas las rutas para que quede acorde al proyecto.
 // Considerar: Tambien faltaria un icono de perfil de forma absoluta que quede flotando en alguna esquina.
 
-const Pruebas = () => {
+const Main = () => {
   const [isOpen, setIsOpen]  = useState(false);
   const [usuario, setUsuario] = useState(null);
   const location = useLocation();
@@ -20,7 +20,7 @@ const Pruebas = () => {
   };
 
  // const pathSegments = location.pathname.split('/').filter(Boolean);
-  //const currentPath = pathSegments[pathSegments.length - 1] || 'pruebas';
+  //const currentPath = pathSegments[pathSegments.length - 1] || 'main';
 
   useEffect(() => {
     const usuarioAlmacenado = localStorage.getItem('usuarioLogueado');
@@ -48,7 +48,7 @@ const Pruebas = () => {
   )
 }
 
-export default Pruebas
+export default Main
 
 const Container = styled.div`
   width: 100%;

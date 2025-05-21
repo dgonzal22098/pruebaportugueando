@@ -4,6 +4,7 @@ import { IoIosArrowDroprightCircle as Arrow} from "react-icons/io";
 import { FaToggleOn as ToggleOn, FaToggleOff as ToggleOff } from "react-icons/fa";
 import AlertActivation from "../Alert";
 import ModalCursosInscritos from "./ModalCursosInscritos";
+import {device} from "../../../Breakpoints/breakpoints.js"
 
 // Componente de informacion de un docente
 // Rol: Administrador
@@ -80,6 +81,11 @@ const Container = styled.div`
     border: 0.5px grey solid;
     gap: 15px;
     background-color: white;
+    
+    @media ${device.mobile} {
+        flex-direction: column;
+        width: 100%;
+    }
 `
 const BotonContainer = styled.div`
   width: 43%;
@@ -87,6 +93,10 @@ const BotonContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
+    
+  @media ${device.mobile} {
+      width: 100%;
+  }  
 `
 const Primero = styled.div`
   display: flex;
@@ -126,5 +136,16 @@ const DataHeader = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
+    p{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: normal;
+        line-clamp: 3;
+        -webkit-line-clamp: 3; /* muestra hasta 3 líneas */
+        text-overflow: ellipsis;
+    }
     
 `

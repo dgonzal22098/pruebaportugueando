@@ -134,8 +134,7 @@ const Modal = styled.div`
     
     
     @media ${device.tablet} {
-        min-width: 200px;
-        margin: 0 3rem;
+        margin: 0 1rem;
     }
   &::-webkit-scrollbar {
       display: none;

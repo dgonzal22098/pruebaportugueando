@@ -131,6 +131,10 @@ const ButtonCont = styled.div`
   width: 90%;
   align-items: center;
   gap: 10px;
+    
+  @media ${device.mobile} {
+      flex-direction: column;
+  }  
 `
 const Button = styled.button`
   width: 50%;
@@ -142,6 +146,10 @@ const Button = styled.button`
   padding: 1rem;
   border: none;
   transition: .2s ease-in-out;
+    
+  @media ${device.mobile} {
+      width: 100%;
+  }  
   &:hover{
     background-color: #53c76a;
     cursor: pointer;

@@ -12,7 +12,7 @@ const ModalCursosInscritos = ({setShowCursosInscritos, nombre}) => {
     const navigate = useNavigate();
 
     const irACursos = () => {
-        navigate("/pruebas/cursos");
+        navigate("/main/cursos");
     };
 
     return (

@@ -8,7 +8,6 @@ import ContentColection from './ContentColection';
 import ColectionCard from "./ColectionCard";
 import NuevaColeccion from "./NuevaColeccion/index.jsx";
 import {device} from "../../Breakpoints/breakpoints"
-import useMediaQuery from "../../hooks/useMediaQuery.js"
 
 // Modulo de las colecciones disponibles
 // Rol: Profesor, Estudiante
@@ -126,6 +125,9 @@ const Container = styled.div`
     
     @media ${device.tablet} {
         padding: 1rem;
+    }
+    @media ${device.mobile} {
+        width: 100%;
     }
     
     &::-webkit-scrollbar {

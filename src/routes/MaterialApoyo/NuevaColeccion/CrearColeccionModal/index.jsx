@@ -251,6 +251,9 @@ const Modal = styled.div`
     @media ${device.tablet}{
         width: 500px;
     }
+    @media ${device.mobile}{
+        margin: 0 1rem;
+    }
     .optionsContainer{
         padding-top: 1rem;
         width: 100%;
