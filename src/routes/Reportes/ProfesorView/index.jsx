@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import useMediaQuery from "../../../hooks/useMediaQuery.js"
 import {useState} from "react";
 import {device} from "../../../Breakpoints/breakpoints.js";
-import Grafico1 from "./Grafico1";
+import Grafico1 from "../Graficos/Grafico1";
 
 
 const ProfesorView = () => {
